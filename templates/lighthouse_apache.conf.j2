@@ -1,0 +1,13 @@
+<VirtualHost *:{{ listen_port }}>
+    ServerName lighthouse.local
+    DocumentRoot {{ lighthouse_base_dir }}
+    
+    <Directory {{ lighthouse_base_dir }}>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/lighthouse_error.log
+    CustomLog ${APACHE_LOG_DIR}/lighthouse_access.log combined
+</VirtualHost>

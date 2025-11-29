@@ -1,3 +1,27 @@
 #SPDX-License-Identifier: MIT-0
 ---
 # tasks file for lighthouse-role
+- name: Lighthouse | Get lighthouse repo
+  ansible.builtin.git:
+    repo: https://github.com/VKCOM/lighthouse.git
+    version: master
+    dest: "{{ lighthouse_base_dir }}"
+
+- name: Lighthouse | Nginx | Generate lighthouse config
+  when: not ansible_check_mode and web_servers == 'nginx'
+  ansible.builtin.template:
+    src: templates/lighthouse_nginx.conf.j2
+    dest: /etc/nginx/conf.d/default.conf
+    mode: "0644"
+  notify: Reload nginx
+
+- name: Lighthouse | Apache | Generate lighthouse config
+  when: not ansible_check_mode and web_servers == 'apache'
+  ansible.builtin.template:
+    src: templates/lighthouse_apache.conf.j2
+    dest: /etc/apache2/sites-available/lighthouse.conf
+    mode: "0644"
+  notify: Restart apache
+
+- name: Meta | Flush handlers
+  ansible.builtin.meta: flush_handlers
