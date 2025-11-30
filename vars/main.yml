@@ -2,3 +2,4 @@
 ---
 # vars file for lighthouse-role
 lighthouse_base_dir: /etc/lighthouse
+source_repo: https://github.com/VKCOM/lighthouse.git

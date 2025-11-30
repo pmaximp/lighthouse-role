@@ -9,7 +9,6 @@ Role Variables
 
 | Name | Description | Type | Default |
 |------|-------------|------|---------|
-| <a name="input_lighthouse_base_dir"></a> [lighthouse\_base\_dir](#input\_lighthouse\_base\_dir) | Путь до конфигурационного файла lighthouse | `string` | `"/etc/lighthouse"` |
 | <a name="input_listen_port"></a> [listen\_port](#input\_listen\_port) | Порт для подключения к lighthouse | `number` | `80` |
 | <a name="input_web_servers"></a> [web\_servers](#input\_web\_servers) | Веб сервер который используется для lighthouse. apache или nginx | `string` | `"nginx"` |
 

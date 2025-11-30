@@ -3,7 +3,7 @@
 # tasks file for lighthouse-role
 - name: Lighthouse | Get lighthouse repo
   ansible.builtin.git:
-    repo: https://github.com/VKCOM/lighthouse.git
+    repo: "{{ source_repo }}"
     version: master
     dest: "{{ lighthouse_base_dir }}"
 
