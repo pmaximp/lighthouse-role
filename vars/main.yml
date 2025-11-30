@@ -2,4 +2,3 @@
 ---
 # vars file for lighthouse-role
 lighthouse_base_dir: /etc/lighthouse
-web_servers: nginx

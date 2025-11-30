@@ -2,3 +2,4 @@
 ---
 # defaults file for lighthouse-role
 listen_port: 80
+web_servers: nginx # or apache

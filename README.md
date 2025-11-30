@@ -17,7 +17,7 @@ Role Variables
 Example Playbook
 ----------------
 
-Пример ansible-playbook
+Пример playbook:
 
     - hosts: lighthouse
       become: true
@@ -28,3 +28,9 @@ License
 -------
 
 BSD
+
+Author Information
+------------------
+
+Perman Maxim
+maxim@7perman.ru
